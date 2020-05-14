@@ -13,7 +13,7 @@
 			}
 		},
 		{
-			"path": "./pages/profile/profile",
+			"path": "pages/profile/profile",
 			"style": {
 				"navigationBarTitleText": "个人中心"
 			}
