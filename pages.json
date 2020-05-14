@@ -21,8 +21,36 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTitleText": "飞猪旅游",
+		"navigationBarBackgroundColor": "#FFD300",
+		"backgroundColor": "#FFD300"
+	},
+	"tabBar":{
+		"backgroundColor":"#FFFFFF",
+		"borderStyle":"black",
+		"selectedColor":"#F76E15",
+		"color":"#333333",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"static/tab/list.png",
+				"selectedIconPath":"static/tab/listb.png",
+				"text":"首页"
+			},
+			{
+				"pagePath":"pages/strategy/strategy",
+				"iconPath":"static/tab/gonglvea.png",
+				"selectedIconPath":"static/tab/gonglveb.png",
+				"text":"攻略"
+			},
+			{
+				"pagePath":"pages/profile/profile",
+				"iconPath":"static/tab/wodea.png",
+				"selectedIconPath":"static/tab/wodeb.png",
+				"text":"我的"
+			}
+			
+			
+		]
 	}
 }
