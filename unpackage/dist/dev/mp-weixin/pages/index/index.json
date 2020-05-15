@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "search": "/pages/index/components/search",
+    "my-swiper": "/pages/index/components/mySwiper",
+    "ticket": "/pages/index/components/ticket",
+    "classify": "/pages/index/components/classify",
+    "scroll-bar": "/pages/index/components/scrollBar"
+  }
+}

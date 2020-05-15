@@ -1,0 +1,21 @@
+
+.ticket.data-v-21b55570{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	text-align: center;
+	margin: 30rpx 0;
+}
+.ticketItem.data-v-21b55570{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.ticketItem image.data-v-21b55570{
+	width: 90rpx;
+	height: 90rpx;
+}
+.ticketItem text.data-v-21b55570{
+	display: block;
+}
+
