@@ -1,50 +1,81 @@
 <template>
-	<view>
+	<view class="scrollBarContain">
 		<scroll-view scroll-x="true" class="scrollBar" scroll-with-animation="true">
-				<block v-for="(item, index) in barItem" :key="index">
-					<view class="barItem" :class="{active:currentIndex === index}" @click="barItemClick(index)">
-						<view class="title"><text>{{ item.title }}</text></view>
-						<view class="desc"><text>{{ item.desc }}</text></view>
+			<block v-for="(item, index) in tab" :key="index">
+				<view class="barItem" :class="{ active: currentIndex === index }" @click="barItemClick(index,item.nav)">
+					<view class="title">
+						<text>{{ item.name }}</text>
 					</view>
-				</block>
+					<view class="desc">
+						<text>{{ item.title }}</text>
+					</view>
+				</view>
+			</block>
 		</scroll-view>
 	</view>
 </template>
 
 <script>
+	import {goodsList} from '../../../common/network/network.js'
+	
 export default {
 	name: 'scrollBar',
+	props:{
+		tab:{
+			type:Array,
+			default(){
+				return []
+			}
+		}
+	},
 	data() {
 		return {
-			barItem: [
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' },
-				{ title: '推荐', desc: '猜你喜欢' }
-			],
-			currentIndex:0
+			currentIndex: 0
 		};
 	},
-	methods:{
-		barItemClick(index){
-			this.currentIndex = index
+	methods: {
+		barItemClick(index,nav) {
+			console.log(index,nav)
+			this.currentIndex = index;
+			// 发送loading数据给vuex
+			let isloading = true
+			
+			// 上拉加载id
+			let pageid = 0
+			
+			// 将首页数据配置传到vuex
+			let homeOption = {
+				loading:isloading,
+				homeGoodsType:nav,
+				pageid:pageid
+			}
+			this.$store.commit('setHomeOption',homeOption)
+			goodsList(nav,pageid)
+			.then(res => {
+				console.log(res)
+				let listdata = res.data
+				// vuex
+				this.$store.commit('setHomeListData',listdata)
+				isloading = false
+				this.$store.commit('setLoading',isloading)
+			})
+			.catch(err => {
+				console.log(err)
+			})
 		}
 	}
 };
 </script>
 
 <style scoped>
+.scrollBarContain {
+	height: 114upx;
+	/* position: absolute; */
+}
 .scrollBar {
-	width: 100%;
 	white-space: nowrap;
 	display: flex;
 	padding: 16upx 0;
-	height: 114upx;
 	background-color: #fff;
 }
 .barItem {
@@ -53,19 +84,19 @@ export default {
 	padding: 6upx 0;
 	display: inline-block;
 }
-.barItem.active{
-	background: linear-gradient(to right,#ccffff 0%, #ffcc00 100%);
+.barItem.active {
+	background: linear-gradient(to right, #ccffff 0%, #ffcc00 100%);
 	border-radius: 0 50upx 0 0;
 }
-.title{
+.title {
 	font-size: 30upx;
 	color: #333333;
 }
-.desc{
+.desc {
 	font-size: 23upx;
 	color: #666666;
 }
-.active .desc{
+.active .desc {
 	color: #292c33;
 }
 </style>

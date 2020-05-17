@@ -5,6 +5,8 @@
     "my-swiper": "/pages/index/components/mySwiper",
     "ticket": "/pages/index/components/ticket",
     "classify": "/pages/index/components/classify",
-    "scroll-bar": "/pages/index/components/scrollBar"
+    "scroll-bar": "/pages/index/components/scrollBar",
+    "goods": "/pages/index/components/goods",
+    "uni-load-more": "/common/components/uni-load-more/uni-load-more"
   }
 }

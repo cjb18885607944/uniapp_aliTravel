@@ -37,6 +37,7 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap31.json"
+  "usingComponents": {
+    "my-loading": "/common/components/loading/loading"
+  }
 }

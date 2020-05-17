@@ -2,8 +2,8 @@
 	<view class="ticket">
 		<block v-for="(item,index) in ticket" :key="index">
 			<view class="ticketItem">
-				<image src="/static/logo.png" mode="widthFix"></image>
-				<text>{{item}}</text>
+				<image :src="item.image" mode="widthFix"></image>
+				<text>{{item.name}}</text>
 			</view>
 		</block>
 	</view>
@@ -14,7 +14,28 @@
 		name:'ticket',
 		data(){
 			return{
-				ticket:['火车票','汽车票','客车票','民宿','酒店']
+				ticket: [
+					{
+						image: 'http://gw.alicdn.com/tfs/TB1DoXFwHsrBKNjSZFpXXcXhFXa-210-126.png_110x10000.jpg_.webp',
+						name: '机票'
+					},
+					{
+						image: 'http://gw.alicdn.com/tfs/TB1s51ECuOSBuNjy0FdXXbDnVXa-210-126.png_110x10000.jpg_.webp',
+						name: '酒店'
+					},
+					{
+						image: 'http://gw.alicdn.com/tfs/TB1BNE_wrZnBKNjSZFrXXaRLFXa-210-126.png_110x10000.jpg_.webp',
+						name: '火车票'
+					},
+					{
+						image: 'http://gw.alicdn.com/tfs/TB1pN01wsUrBKNjSZPxXXX00pXa-210-126.png_110x10000.jpg_.webp',
+						name: '汽车票'
+					},
+					{
+						image: 'http://gw.alicdn.com/tfs/TB1VZqNCuSSBuNjy0FlXXbBpVXa-210-126.png_110x10000.jpg_.webp',
+						name: '门票'
+					}
+				]
 			}
 		}
 	}

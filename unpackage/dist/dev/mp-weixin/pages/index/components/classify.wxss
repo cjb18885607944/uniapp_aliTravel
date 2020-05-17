@@ -9,15 +9,15 @@
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	        align-items: center;
-	border: 1px solid #b5b5b5;
+	border: 1px solid #cccccc;
 	margin: 20rpx;
 	border-radius: 20rpx;
 }
 .classifyItem{
 	width: 25%;
 	height: 140rpx;
-	border-right: 1px solid #b5b5b5;
-	border-bottom: 1px solid #b5b5b5;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	padding: 30rpx 0rpx;

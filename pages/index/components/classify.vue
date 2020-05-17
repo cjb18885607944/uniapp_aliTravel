@@ -40,15 +40,15 @@ export default {
 		flex-wrap: wrap;
 		text-align: center;
 		align-items: center;
-		border: 1px solid #b5b5b5;
+		border: 1px solid #cccccc;
 		margin: 20upx;
 		border-radius: 20rpx;
 	}
 	.classifyItem{
 		width: 25%;
 		height: 140upx;
-		border-right: 1px solid #b5b5b5;
-		border-bottom: 1px solid #b5b5b5;
+		border-right: 1px solid #cccccc;
+		border-bottom: 1px solid #cccccc;
 		box-sizing: border-box;
 		padding: 30upx 0upx;
 	}

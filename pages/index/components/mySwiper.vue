@@ -11,7 +11,7 @@
 			<block v-for="(item,index) in banner" :key="index">
 				<swiper-item>
 					<view class="swiper-item" id="swiper-item" @click="localCount()">
-						<image src="/static/logo.png" mode="aspectFill" class="swiperImage"></image>
+						<image :src="item.image" mode="aspectFill" class="swiperImage"></image>
 					</view>
 				</swiper-item>
 			</block>
@@ -24,9 +24,17 @@
 		name:'mySwiper',
 		data(){
 			return{
-				banner:['1','2','3']
+				
 			}
-		}
+		},
+		props: {
+			banner: {
+				type: Array,
+				default(){
+					return
+				}
+			},
+		},
 	}
 </script>
 

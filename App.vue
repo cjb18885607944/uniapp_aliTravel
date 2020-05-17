@@ -1,13 +1,14 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
+			if(!wx.cloud){
+				console.error('请使用2.2.3或以上的基础库以使用云能力')
+			}else{
+				wx.cloud.init({
+					env:'travel-8g7p0',
+					traceUser:true
+				})
+			}
 		}
 	}
 </script>

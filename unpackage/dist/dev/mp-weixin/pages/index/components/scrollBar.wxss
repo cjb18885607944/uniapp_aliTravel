@@ -1,12 +1,14 @@
 
+.scrollBarContain.data-v-30c8675c {
+	height: 114rpx;
+	/* position: absolute; */
+}
 .scrollBar.data-v-30c8675c {
-	width: 100%;
 	white-space: nowrap;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
 	padding: 16rpx 0;
-	height: 114rpx;
 	background-color: #fff;
 }
 .barItem.data-v-30c8675c {
@@ -15,21 +17,21 @@
 	padding: 6rpx 0;
 	display: inline-block;
 }
-.barItem.active.data-v-30c8675c{
-	background: -webkit-gradient(linear,left top, right top,from(#ccffff), to(#ffcc00));
-	background: -webkit-linear-gradient(left,#ccffff 0%, #ffcc00 100%);
-	background: linear-gradient(to right,#ccffff 0%, #ffcc00 100%);
+.barItem.active.data-v-30c8675c {
+	background: -webkit-gradient(linear, left top, right top, from(#ccffff), to(#ffcc00));
+	background: -webkit-linear-gradient(left, #ccffff 0%, #ffcc00 100%);
+	background: linear-gradient(to right, #ccffff 0%, #ffcc00 100%);
 	border-radius: 0 50rpx 0 0;
 }
-.title.data-v-30c8675c{
+.title.data-v-30c8675c {
 	font-size: 30rpx;
 	color: #333333;
 }
-.desc.data-v-30c8675c{
+.desc.data-v-30c8675c {
 	font-size: 23rpx;
 	color: #666666;
 }
-.active .desc.data-v-30c8675c{
+.active .desc.data-v-30c8675c {
 	color: #292c33;
 }
 
