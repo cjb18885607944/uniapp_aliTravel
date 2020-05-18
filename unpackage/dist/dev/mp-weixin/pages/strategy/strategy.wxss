@@ -1,0 +1,19 @@
+
+.publish.data-v-07adff52{
+	position: fixed;
+	bottom: 40rpx;
+	left: 0;
+	right: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.publish image.data-v-07adff52{
+	width: 120rpx;
+	height: 100rpx;
+	border-radius: 40rpx;
+}
+

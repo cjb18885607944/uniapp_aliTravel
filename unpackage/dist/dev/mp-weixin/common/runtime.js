@@ -104,7 +104,7 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"common/components/homeload/homeload":1,"common/components/loading/loading":1,"common/components/nodata/nodata":1,"pages/strategy/components/address":1,"pages/strategy/components/tabbar":1,"common/components/uni-load-more/uni-load-more":1,"pages/index/components/classify":1,"pages/index/components/goods":1,"pages/index/components/mySwiper":1,"pages/index/components/scrollBar":1,"pages/index/components/search":1,"pages/index/components/ticket":1};
+/******/ 		var cssChunks = {"common/components/homeload/homeload":1,"common/components/loading/loading":1,"common/components/nodata/nodata":1,"pages/strategy/components/address":1,"pages/strategy/components/content":1,"pages/strategy/components/tabbar":1,"common/components/uni-load-more/uni-load-more":1,"pages/index/components/classify":1,"pages/index/components/goods":1,"pages/index/components/mySwiper":1,"pages/index/components/scrollBar":1,"pages/index/components/search":1,"pages/index/components/ticket":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {

@@ -6,7 +6,7 @@
 			</view>
 			<view class="addressText">
 				<view class="addressName">
-					<text>丽江</text>
+					<text>{{address}}</text>
 					<image src="/static/tab/jiantouxia.png" mode=""></image>
 					<view class="wordEng">
 						lijiang
@@ -23,7 +23,15 @@
 
 <script>
 	export default{
-		name:'Address'
+		name:'Address',
+		props:{
+			address:{
+				type:String,
+				default(){
+					return '' 
+				}
+			}
+		}
 	}
 </script>
 <style>

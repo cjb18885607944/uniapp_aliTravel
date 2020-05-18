@@ -16,6 +16,9 @@ Vue.component('myLoading',loading)
 // 没有数据的提示组件
 import nodata from './common/components/nodata/nodata.vue'
 Vue.component('none-data',nodata)
+// 引入动画css
+import animated from 'animate.css'
+Vue.use(animated)
 
 App.mpType = 'app'
 

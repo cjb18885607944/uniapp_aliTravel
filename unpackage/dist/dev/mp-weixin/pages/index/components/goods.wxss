@@ -1,5 +1,43 @@
 
-.goods {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 引入公共样式 */
+.goods.data-v-586327a2 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
@@ -10,26 +48,26 @@
 	        justify-content: start;
 	/* min-height: 400upx; */
 }
-.goodsItem {
+.goodsItem.data-v-586327a2 {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	width: 47%;
 	margin: 1% 1.5%;
 }
-.goodsImg image {
+.goodsImg image.data-v-586327a2 {
 	width: 100%;
 	height: 440rpx;
 	border-radius: 16rpx;
 }
-.goodsInfo {
+.goodsInfo.data-v-586327a2 {
 	padding: 0 16rpx;
 }
-.title {
+.title.data-v-586327a2 {
 	font-size: 30rpx;
 	color: #d5c394;
 	line-height: 50rpx;
 }
-.describe {
+.describe.data-v-586327a2 {
 	color: #333333;
 	font-size: 36rpx;
 	font-weight: bold;
@@ -40,17 +78,17 @@
 	text-overflow: ellipsis;
 	-webkit-line-clamp: 2;
 }
-.address {
+.address.data-v-586327a2 {
 	font-size: 26rpx;
 	color: #d5c394;
 	line-height: 50rpx;
 }
-.price {
+.price.data-v-586327a2 {
 	font-size: 36rpx;
 	color: #ff9113;
 	font-weight: bold;
 }
-.bought {
+.bought.data-v-586327a2 {
 	font-size: 26rpx;
 	color: #ccc;
 	margin-left: 10rpx;

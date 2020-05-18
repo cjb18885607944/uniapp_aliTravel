@@ -37,9 +37,15 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "usingComponents": {
     "homeload": "/common/components/homeload/homeload",
     "my-loading": "/common/components/loading/loading",
     "none-data": "/common/components/nodata/nodata"
-  }
+  },
+  "sitemapLocation": "sitemap61.json"
 }
