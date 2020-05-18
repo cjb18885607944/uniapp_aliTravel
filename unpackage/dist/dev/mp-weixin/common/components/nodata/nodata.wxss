@@ -1,0 +1,14 @@
+
+.nodata{
+	text-align: center;
+}
+.nodata image{
+	width: 200rpx;
+	height: 200rpx;
+}
+.nodata text{
+	display: block;
+	font-size: 30rpx;
+	color: rgb(153,153,153);
+}
+

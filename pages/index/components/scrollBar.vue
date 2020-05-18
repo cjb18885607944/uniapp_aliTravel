@@ -2,7 +2,7 @@
 	<view class="scrollBarContain">
 		<scroll-view scroll-x="true" class="scrollBar" scroll-with-animation="true">
 			<block v-for="(item, index) in tab" :key="index">
-				<view class="barItem" :class="{ active: currentIndex === index }" @click="barItemClick(index,item.nav)">
+				<view class="barItem" :class="{ active: currentIndex === index }" @tap="barItemClick(index,item.nav)">
 					<view class="title">
 						<text>{{ item.name }}</text>
 					</view>
@@ -43,17 +43,31 @@ export default {
 			// 上拉加载id
 			let pageid = 0
 			
+			// 上拉加载隐藏
+			let loadmore = false
+			
+			// ‘没有更多’隐藏
+			let nonedata = false
+			this.$store.commit('isShowNoneData',nonedata)
+			
 			// 将首页数据配置传到vuex
-			let homeOption = {
+			let navhomeOption = {
 				loading:isloading,
 				homeGoodsType:nav,
-				pageid:pageid
+				pageid:pageid,
+				loadmore:loadmore
 			}
-			this.$store.commit('setHomeOption',homeOption)
+			this.$store.commit('setHomeOption',navhomeOption)
 			goodsList(nav,pageid)
 			.then(res => {
-				console.log(res)
 				let listdata = res.data
+				if(listdata.length === 0){
+					let nonedata = true
+					this.$store.commit('isShowNoneData',nonedata)
+				}else{
+					let nonedata = false
+					this.$store.commit('isShowNoneData',nonedata)
+				}
 				// vuex
 				this.$store.commit('setHomeListData',listdata)
 				isloading = false

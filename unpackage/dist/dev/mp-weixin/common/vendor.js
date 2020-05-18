@@ -7788,13 +7788,19 @@ var loading = {
 var homeOption = {
   isloading: false,
   homeGoodsType: 'recommend',
-  pageid: 0 };
+  pageid: 0,
+  loadmore: false };
+
+// tab切换灭有数据的提示
+var nonedata = {
+  nonedata: '' };
 
 
 var state = {
   homeGoodsList: homeGoodsList,
   loading: loading,
-  homeOption: homeOption };var _default =
+  homeOption: homeOption,
+  nonedata: nonedata };var _default =
 
 
 new _vuex.default.Store({
@@ -7808,18 +7814,24 @@ new _vuex.default.Store({
 
     },
     setLoading: function setLoading(state, isloading) {
-      state.homeOption = {
-        isloading: isloading };
-
-      console.log(state.loading.isloading);
+      state.homeOption.isloading = isloading;
+      console.log(isloading);
     },
     setHomeOption: function setHomeOption(state, option) {
       console.log(option);
       state.homeOption = {
         isloading: option.loading,
         homeGoodsType: option.homeGoodsType,
-        pageid: option.pageid };
+        pageid: option.pageid,
+        loadmore: option.loadmore };
 
+    },
+    isShowNoneData: function isShowNoneData(state, nodata) {
+      console.log('none data: ' + nodata);
+      state.nonedata = {
+        nonedata: nodata };
+
+      console.log('none data');
     } } });exports.default = _default;
 
 /***/ }),

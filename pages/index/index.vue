@@ -1,5 +1,7 @@
 <template>
 	<view>
+		<!-- 进入页面的loading -->
+		<homeload v-if="homeload"></homeload>
 		<Search></Search>
 		<MySwiper :banner="banner"></MySwiper>
 		<Ticket></Ticket>
@@ -7,6 +9,7 @@
 		<ScrollBar :tab="tab" id="scrollBar"></ScrollBar>
 		<myLoading v-if="isLoading"></myLoading>
 		<Goods :goodsList="goodsList" v-if="!isLoading"></Goods>
+		<none-data v-if="nodata"></none-data>
 		<!-- 上拉加载更多 -->
 		<view class="loadmore" v-show="isShowLoadMore">
 			<uni-load-more :status="loadmore" color="#ffcc99"></uni-load-more>
@@ -50,7 +53,9 @@ export default {
 			homeGoodsType:'',
 			more:'loading',
 			loadmore:'more',
-			isShowLoadMore:false
+			isShowLoadMore:false,
+			nodata:false,
+			homeload:true
 		};
 	},
 	created() {
@@ -65,7 +70,8 @@ export default {
 			this.banner = res[0].data
 			this.tab = res[1].data
 			this.goodsList = res[2].data
-			
+			// 本页加载完毕，隐藏homeload
+			this.homeload = false
 		})
 		.catch(err => {
 			console.log(err)
@@ -79,21 +85,26 @@ export default {
 		})
 	},
 	computed:{
+		// 取出vuex仓库的数据
+		...mapState(['homeGoodsList','loading','homeOption','nonedata']),
+		//tabbar是否fixed
 		comIsFixed(){
 			this.isFixed = (this.scrollPageTop >= this.scrollBarTop)
 		},
-		// 取出vuex仓库的数据
-		...mapState(['homeGoodsList','loading','homeOption']),
 		// 取tab切换的数据
 		HomeList(){
 			this.goodsList = this.homeGoodsList.list
 		},
-		
+		// tab切换后是否有数据
+		isShowNoneData(){
+			this.nodata = this.nonedata.nonedata
+		},
 		// 获取首页配置数据
 		getHomeOption(){
 			this.isLoading = this.homeOption.isloading
 			this.homeGoodsType = this.homeOption.homeGoodsType
 			this.pageid = this.homeOption.pageid
+			this.isShowLoadMore = this.homeOption.loadmore
 		}
 	},
 	methods:{
@@ -105,6 +116,7 @@ export default {
 				if(res.data.length == 0){
 					console.log('没有数据了')
 					this.loadmore = 'noMore'
+					this.isShowLoadMore = true
 				}else{
 					console.log(res.data)
 					this.goodsList = [...this.goodsList,...res.data]
@@ -120,11 +132,13 @@ export default {
 	},
 	// 上拉加载
 	onReachBottom(){
+		console.log(this)
 		// 上拉加载显示
 		this.isShowLoadMore = true
+		this.nodata = false
 		this.loadmore = 'loading'
-		console.log('上拉加载')
-		this.pageid+=1
+		console.log('上拉加载',this.pageid)
+		this.pageid++
 		console.log(this.pageid)
 		this.onpulldown()
 	}

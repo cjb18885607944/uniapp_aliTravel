@@ -15,4 +15,9 @@
 
 
 /*每个页面公共css */
+::-webkit-scrollbar{
+	height: 0;
+	width: 0;
+	color: transparent;
+}
 

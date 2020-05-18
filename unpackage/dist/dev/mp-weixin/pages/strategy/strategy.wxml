@@ -1,1 +1,1 @@
-<view>stategy</view>
+<view><address vue-id="4e1fb440-1" bind:__l="__l"></address><tab-bar vue-id="4e1fb440-2" bind:__l="__l"></tab-bar><content vue-id="4e1fb440-3" bind:__l="__l"></content></view>

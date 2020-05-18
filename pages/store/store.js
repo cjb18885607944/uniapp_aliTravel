@@ -17,13 +17,19 @@ const loading = {
 const homeOption = {
 	isloading:false,
 	homeGoodsType:'recommend',
-	pageid:0
+	pageid:0,
+	loadmore:false
+}
+// tab切换灭有数据的提示
+const nonedata = {
+	nonedata:''
 }
 
 const state = {
 	homeGoodsList,
 	loading,
-	homeOption
+	homeOption,
+	nonedata
 }
 
 export default new Vuex.Store({
@@ -37,18 +43,24 @@ export default new Vuex.Store({
 			}
 		},
 		setLoading(state,isloading){
-			state.homeOption = {
-				isloading:isloading
-			}
-			console.log(state.loading.isloading)
+			state.homeOption.isloading = isloading
+			console.log(isloading)
 		},
 		setHomeOption(state,option){
 			console.log(option)
 			state.homeOption = {
 				isloading:option.loading,
 				homeGoodsType:option.homeGoodsType,
-				pageid:option.pageid
+				pageid:option.pageid,
+				loadmore:option.loadmore
 			}
+		},
+		isShowNoneData(state,nodata){
+			console.log('none data: '+nodata)
+			state.nonedata = {
+				nonedata:nodata
+			}
+			console.log('none data')
 		}
 	}
 })

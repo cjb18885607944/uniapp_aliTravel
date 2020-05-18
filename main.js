@@ -8,8 +8,14 @@ import store from './pages/store/store.js'
 Vue.prototype.$store = store
 
 // 引入loading
+import homeload from './common/components/homeload/homeload.vue'
+Vue.component('homeload',homeload)
+// 引入loading
 import loading from './common/components/loading/loading.vue'
 Vue.component('myLoading',loading)
+// 没有数据的提示组件
+import nodata from './common/components/nodata/nodata.vue'
+Vue.component('none-data',nodata)
 
 App.mpType = 'app'
 
