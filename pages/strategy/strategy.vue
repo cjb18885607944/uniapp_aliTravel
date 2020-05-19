@@ -15,6 +15,7 @@
 	import TabBar from './components/tabbar.vue'
 	import Content from './components/content.vue'
 	import {addressData} from '../../common/network/map.js'
+	import {mapState} from 'vuex'
 
 	export default{
 		name:'Strategy',
@@ -25,11 +26,25 @@
 		},
 		data(){
 			return{
+				oldAddress:'',//暂存地址的变量
 				address:'请选择城市'
 			}
 		},
 		created() {
 			this.initMap()
+		},
+		computed:{
+			...mapState(['city']),
+			// 监听定位信息
+			getAddress(){
+				this.oldAddress = this.city.city
+			}
+		},
+		watch:{
+			oldAddress(newVal,oldVal){
+				console.log('选择的城市',newVal)
+				this.address = newVal
+			}
 		},
 		methods:{
 			initMap(){

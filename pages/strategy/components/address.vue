@@ -4,7 +4,7 @@
 			<view class="addressImg">
 				<image src="/static/tab/lijiang.jpeg" mode="aspectFill"></image>
 			</view>
-			<view class="addressText">
+			<view class="addressText" @tap="chooseAddress">
 				<view class="addressName">
 					<text>{{address}}</text>
 					<image src="/static/tab/jiantouxia.png" mode=""></image>
@@ -30,6 +30,13 @@
 				default(){
 					return '' 
 				}
+			}
+		},
+		methods:{
+			chooseAddress(){
+				uni.navigateTo({
+					url:'/pages/search/search'
+				})
 			}
 		}
 	}

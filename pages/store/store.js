@@ -25,11 +25,17 @@ const nonedata = {
 	nonedata:''
 }
 
+// 定位的城市
+const city = {
+	city:''
+}
+
 const state = {
 	homeGoodsList,
 	loading,
 	homeOption,
-	nonedata
+	nonedata,
+	city
 }
 
 export default new Vuex.Store({
@@ -61,6 +67,13 @@ export default new Vuex.Store({
 				nonedata:nodata
 			}
 			console.log('none data')
+		},
+		// 定位城市
+		setCity(state,citydata){
+			console.log(citydata)
+			state.city = {
+				city:citydata
+			}
 		}
 	}
 })

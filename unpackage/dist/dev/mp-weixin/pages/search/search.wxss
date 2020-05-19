@@ -1,0 +1,270 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 搜索框 */
+.search.data-v-71496c92{
+	background: -webkit-gradient(linear,left bottom, left top,color-stop(10%, #ffe556),to(#ffd300));
+	background: -webkit-linear-gradient(bottom,#ffe556 10%,#ffd300 100%);
+	background: linear-gradient(to top,#ffe556 10%,#ffd300 100%);
+	padding: 30rpx 20rpx;
+}
+.searchContent.data-v-71496c92{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.searchInput.data-v-71496c92{
+	-webkit-box-flex: 8;
+	-webkit-flex: 8;
+	        flex: 8;
+	height: 70rpx;
+	border-radius: 35rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	background-color: #fff;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.searchInput input.data-v-71496c92{
+	height: 70rpx;
+	line-height: 70rpx;
+	width: 100%;
+	font-size: 30rpx;
+	color: #666;
+}
+.searchInput image.data-v-71496c92{
+	height: 50rpx;
+	width: 50rpx;
+	margin: 0 20rpx;
+}
+.searchIcon.data-v-71496c92{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.searchIcon image.data-v-71496c92{
+	height: 50rpx;
+	width: 50rpx;
+}
+/* 定位城市 */
+.locationCity.data-v-71496c92{
+	padding: 0 20rpx;
+}
+.location.data-v-71496c92{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	margin: 50rpx 0rpx;
+	background-color: #f7f7f7;
+	border-radius: 8rpx;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	padding: 30rpx 20rpx;
+	font-size: 40rpx;
+}
+.locationDetail.data-v-71496c92{
+	margin: 0 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.locationDetail image.data-v-71496c92{
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 20rpx;
+}
+/* 热门城市 */
+.hot.data-v-71496c92{
+	font-size: 40rpx;
+	color: #666;
+}
+.city.data-v-71496c92{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.cityItem.data-v-71496c92{
+	display: inline-block;
+	padding: 16rpx;
+	background-color: #f7f7f7;
+	margin: 30rpx 30rpx 0 0;
+}
+/* 搜索结果提示 */
+.searchTip.data-v-71496c92{
+	padding:0 40rpx;
+}
+.tipItem.data-v-71496c92{
+	border-bottom: 1px solid #e5e5e5;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	height: 50rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	font-size: 30rpx;
+	padding: 20rpx 0;
+	color: #ee9900;
+}
+.tipItem.data-v-71496c92:last-child{
+	border: none;
+}
+.tipItem image.data-v-71496c92{
+	width: 40rpx;
+	height: 40rpx;
+	margin: 0 30rpx;
+}
+

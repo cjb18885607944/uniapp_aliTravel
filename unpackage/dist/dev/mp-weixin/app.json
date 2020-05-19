@@ -2,7 +2,8 @@
   "pages": [
     "pages/strategy/strategy",
     "pages/index/index",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/search/search"
   ],
   "subPackages": [],
   "window": {
@@ -46,6 +47,5 @@
     "homeload": "/common/components/homeload/homeload",
     "my-loading": "/common/components/loading/loading",
     "none-data": "/common/components/nodata/nodata"
-  },
-  "sitemapLocation": "sitemap61.json"
+  }
 }
