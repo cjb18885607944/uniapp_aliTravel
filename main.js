@@ -4,7 +4,7 @@ import App from './App'
 Vue.config.productionTip = false
 
 // 引入vuex
-import store from './pages/store/store.js'
+import store from './common/store/store.js'
 Vue.prototype.$store = store
 
 // 引入loading

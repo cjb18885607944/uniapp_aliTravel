@@ -5,7 +5,7 @@
 			<view class="searchContent">
 				<view class="searchInput">
 					<image src="/static/tab/sousuo.svg" mode="widthFix"></image>
-					<input type="text" placeholder="搜索感兴趣的目的地" @focus="onSearch" @input="searchAddress"/>
+					<input type="text" placeholder="搜索感兴趣的目的地" @focus="onSearch" @input="searchAddress" v-model="keyAddress"/>
 				</view>
 				<view class="searchIcon" v-if="isSearch" @click="closeSearch"><image src="/static/tab/chaa.svg" mode="widthFix"></image></view>
 			</view>
@@ -29,9 +29,9 @@
 		<!-- 搜索结果提示 -->
 		<view class="searchTip" v-if="isSearch">
 			<block v-for="(item,index) in city" :key="index">
-				<view class="tipItem" @tap="tapResult(item.title)">
+				<view class="tipItem" @tap="tapResult(item)">
 					<image src="/static/tab/gonglveb.png"></image>
-					<text>{{item.title}}</text>
+					<text>{{item}}</text>
 				</view>
 			</block>
 		</view>
@@ -53,7 +53,8 @@
 			return{
 				address:'请定位',
 				isSearch:false,
-				city:[]
+				city:[],
+				keyAddress:''
 			}
 		},
 		mounted(){
@@ -94,6 +95,8 @@
 			},
 			closeSearch(){
 				this.isSearch = false
+				this.keyAddress = ''
+				this.city = []
 			},
 			// 实时搜索城市
 			searchAddress(e){
@@ -105,9 +108,20 @@
 				});
 				qqmapsdk.getSuggestion({
 					keyword:key,
+					fiter:'category=景区,美食',
 					success:(res => {
-						console.log(res)
-						this.city = res.data
+						// this.city = res.data
+						let city = res.data
+						// 取出城市名
+						let mainCity = res.data[0].city
+						console.log(mainCity)
+						// 过滤数据
+						let citydata = city.map(item => {
+							return item.title
+						})
+						console.log(citydata)
+						// 第一个都是市级地区
+						this.city = [mainCity,...citydata]
 					}),
 					fail:(err => {
 						console.log(err)

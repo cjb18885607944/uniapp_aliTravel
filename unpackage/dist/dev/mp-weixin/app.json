@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/upload/upload",
     "pages/strategy/strategy",
     "pages/index/index",
     "pages/profile/profile",

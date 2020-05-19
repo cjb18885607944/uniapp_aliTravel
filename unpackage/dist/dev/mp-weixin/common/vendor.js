@@ -1690,9 +1690,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 11:
-/*!***********************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/uniapp_aliTravel/pages/store/store.js ***!
-  \***********************************************************************************/
+/*!************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/uniapp/uniapp_aliTravel/common/store/store.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2738,30 +2738,6 @@ var index_esm = {
 // extracted by mini-css-extract-plugin
     if(false) { var cssReload; }
   
-
-/***/ }),
-
-/***/ 156:
-/*!**********************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/uniapp/uniapp_aliTravel/common/js/common.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.debounce = void 0;var debounce = function debounce(func, wait) {
-  var timeout;
-  return function () {
-    var context = this;
-    var args = arguments;
-
-    if (timeout) clearTimeout(timeout);
-
-    timeout = setTimeout(function () {
-      func.apply(context, args);
-    }, wait);
-  };
-};exports.debounce = debounce;
 
 /***/ }),
 
@@ -10039,6 +10015,49 @@ var goodsList = function goodsList(set, pageid) {
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ 45:
+/*!**********************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/uniapp/uniapp_aliTravel/common/js/common.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.preview = exports.debounce = void 0;var debounce = function debounce(func, wait) {
+  var timeout;
+  return function () {
+    var context = this;
+    var args = arguments;
+
+    if (timeout) clearTimeout(timeout);
+
+    timeout = setTimeout(function () {
+      func.apply(context, args);
+    }, wait);
+  };
+};exports.debounce = debounce;
+
+var preview = function preview(index, Arr) {
+  return new Promise(function (resolve, reject) {
+    uni.previewImage({
+      current: index,
+      urls: Arr,
+      longPressActions: {
+        itemList: ['发送给好友', '分享', '收藏', '保存到相册', '关闭'] } }).
+
+
+    then(function (res) {
+      resolve(res);
+    }).
+    catch(function (err) {
+      reject(err);
+    });
+  });
+};exports.preview = preview;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

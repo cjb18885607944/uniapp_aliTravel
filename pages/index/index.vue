@@ -8,12 +8,12 @@
 		<Classify></Classify>
 		<ScrollBar :tab="tab" id="scrollBar"></ScrollBar>
 		<myLoading v-if="isLoading"></myLoading>
-		<Goods :goodsList="goodsList" v-if="!isLoading"></Goods>
 		<none-data v-if="nodata"></none-data>
 		<!-- 上拉加载更多 -->
 		<view class="loadmore" v-show="isShowLoadMore">
 			<uni-load-more :status="loadmore" color="#ffcc99"></uni-load-more>
 		</view>
+		<Goods :goodsList="goodsList" v-if="!isLoading"></Goods>
 	</view>
 </template>
 

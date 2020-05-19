@@ -38,4 +38,7 @@ export default {
 <style scoped>
 /* 引入公共样式 */
 @import "/common/css/common.css";
+.goods{
+	min-height: 1000upx;
+}
 </style>
