@@ -30,6 +30,16 @@
 				</block>
 			</view>
 		</view>
+		<!-- 上传视频 -->
+		<view class="uploadVidep">
+			<view class="videoImg">
+				<image src="/static/tab/topvideo.png" mode="widthFix" @tap="uploadVideo"></image>
+			</view>
+			<view class="videoCon">
+				<video :src="videoSrc" controls objectFit="cover" :poster="book"></video>
+				<view class="delImg" @tap="delVideo()">×</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -42,7 +52,9 @@
 			return{
 				currentIndex:0,
 				classify:['景点','美食','网红','打卡'],
-				uploadedImg:[]
+				uploadedImg:[],
+				videoSrc:'',
+				book:''
 			}
 		},
 		methods:{
@@ -74,6 +86,22 @@
 				})
 				.catch(err => {
 					console.log('预览失败')
+				})
+			},
+			// 上传视频
+			uploadVideo(){
+				uni.chooseVideo({
+					count:1,
+					sourceType:['camera','album'],
+					maxDuration:60,
+					success:res => {
+						this.videoSrc = res.tempFilePath
+						this.book = res.thumbTempFilePath
+						console.log(res)
+					},
+					fail: err =>{
+						console.log(err)
+					}
 				})
 			}
 		}
@@ -157,5 +185,22 @@
 		right: 0;
 		border-radius: 50%;
 		text-align: center;
+	}
+	/* 上传视频 */
+	.videoImg{
+		padding: 10upx 20upx;
+	}
+	.videoImg image{
+		width: 150upx;
+		height: 150upx;
+		border-radius: 20upx;
+	}
+	.videoCon{
+		position: relative;
+	}
+	.videoCon video{
+		width: 100%;
+		height: 400upx;
+		border-radius: 5upx;
 	}
 </style>

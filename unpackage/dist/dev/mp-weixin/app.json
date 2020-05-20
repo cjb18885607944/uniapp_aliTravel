@@ -48,5 +48,6 @@
     "homeload": "/common/components/homeload/homeload",
     "my-loading": "/common/components/loading/loading",
     "none-data": "/common/components/nodata/nodata"
-  }
+  },
+  "sitemapLocation": "sitemap26.json"
 }
