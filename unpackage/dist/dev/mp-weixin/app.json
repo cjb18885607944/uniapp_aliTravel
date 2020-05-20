@@ -47,7 +47,7 @@
   "usingComponents": {
     "homeload": "/common/components/homeload/homeload",
     "my-loading": "/common/components/loading/loading",
-    "none-data": "/common/components/nodata/nodata"
-  },
-  "sitemapLocation": "sitemap26.json"
+    "none-data": "/common/components/nodata/nodata",
+    "modal": "/common/components/modal/modal"
+  }
 }

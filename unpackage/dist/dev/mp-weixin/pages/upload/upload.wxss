@@ -103,4 +103,48 @@
 	height: 400rpx;
 	border-radius: 5rpx;
 }
+/* 定位 */
+.addressSite.data-v-70d6f397{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.addressSite image.data-v-70d6f397{
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 30rpx;
+}
+.addressSite text.data-v-70d6f397{
+	font-size: 30rpx;
+	color: #00a2ff;
+}
+.addressText.data-v-70d6f397{
+	font-size: 30rpx;
+	color: #333;
+	padding-right: 40rpx;
+}
+.address.data-v-70d6f397{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	background: #F1F1F1;
+	padding: 20rpx 0 20rpx 20rpx;
+	margin-top: 30rpx;
+	margin-bottom: 160rpx;
+}
+.release.data-v-70d6f397{
+	height: 100rpx;
+	width: 100%;
+	line-height: 100rpx;
+	text-align: center;
+	font-size: 40rpx;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #ffdd00;
+}
 

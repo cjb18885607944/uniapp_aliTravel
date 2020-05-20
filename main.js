@@ -16,6 +16,9 @@ Vue.component('myLoading',loading)
 // 没有数据的提示组件
 import nodata from './common/components/nodata/nodata.vue'
 Vue.component('none-data',nodata)
+// 自定义模态框
+import modal from './common/components/modal/modal.vue'
+Vue.component('modal',modal)
 // 引入动画css
 import animated from 'animate.css'
 Vue.use(animated)

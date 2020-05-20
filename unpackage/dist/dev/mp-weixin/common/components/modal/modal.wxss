@@ -1,0 +1,47 @@
+
+.modal.data-v-5901d3ee{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.2);
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	overflow: hidden;
+	z-index: 9999;
+}
+.modalCon.data-v-5901d3ee{
+	background-color: #fff;
+	border-radius: 20rpx;
+	min-width: 400rpx;
+	min-height: 300rpx;
+}
+.content.data-v-5901d3ee{
+	background-image: url(/static/tab/bg_heart.png) no-repeat left top;
+	background-size: 200rpx;
+	height: 300rpx;
+	text-align: center;
+	line-height: 300rpx;
+}
+.btn.data-v-5901d3ee{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.cancle.data-v-5901d3ee,.confirm.data-v-5901d3ee{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	border-right: 1px solid #999999;
+	border-top: 1px solid #999999;
+	height: 100rpx;
+}
+
