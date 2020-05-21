@@ -49,5 +49,6 @@
     "my-loading": "/common/components/loading/loading",
     "none-data": "/common/components/nodata/nodata",
     "modal": "/common/components/modal/modal"
-  }
+  },
+  "sitemapLocation": "sitemap71.json"
 }

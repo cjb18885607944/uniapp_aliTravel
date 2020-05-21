@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 模态框 -->
-		<modal></modal>
+		<modal content="请登录后操作" confirlText="登录" ref="modal"></modal>
 		
 		<view class="upload">
 			<!-- 分类 -->
@@ -66,6 +66,9 @@
 	import {preview} from '../../common/js/common.js'
 	import {addressData} from '../../common/network/map.js'
 	import {mapState} from 'vuex'
+	// 引入时间
+	var util = require('../../common/js/time.js')
+	var time = util.formatTime(new Date())
 	
 	export default{
 		name:'Upload',
@@ -73,13 +76,17 @@
 			return{
 				currentIndex:0,
 				classify:['景点','美食','网红','打卡'],
-				uploadedImg:[],//上传的图片
-				videoSrc:'',//上传的视频
 				book:'',
-				address:'',
 				classifyName:'',//分类名
 				uploadTitle:'',//标题
 				uploadContent:'',//内容
+				uploadedImg:[],//上传的图片
+				videoSrc:'',//上传的视频
+				address:'',//定位
+				avatar:'',//头像
+				nickName:'',//昵称
+				openid:'',//openid
+				time:time//当前时间
 			}
 		},
 		computed:{
@@ -184,7 +191,6 @@
 				}else if(this.uploadedImg.length < 3){
 					this.toast('上传的图片不小于三张')
 				}else{
-					this.toast('上传成功！')
 					this.isLogin()
 				}
 			},
@@ -196,23 +202,120 @@
 				user.get().then(res => {
 					console.log(res)
 					if(res.data.length == 0){
-						uni.showModal({
-							content:'请登录',
-							showCancel:true,
-							cancelColor:'#f10c00',
-							confirmText:'登录',
-							success(res) {
-								console.log(res)
-							},
-							fail(err) {
-								console.log(err)
-							}
+						this.$nextTick(()=>{
+							this.$refs.modal.init()
 						})
 					}else{
-						this.toast('已经登录')
+						uni.showLoading({
+							title:'正在上传',
+							mask:true
+						})
+						this.avatar = res.data[0].avatarUrl
+						this.nickName = res.data[0].nickName
+						this.openid = res.data[0]._openid
+						// 上传数据到服务器
+						this.uploadData()
 					}
 				}).catch(err => {
 					this.toast('登录失败')
+				})
+			},
+			// 上传数据到数据库
+			async uploadData(){
+				// 1.上传图片，2.上传视频，3.上传所有数据
+				// 1.上传图片
+				let imgData = await this.uploadImgData()
+				console.log(imgData)
+				// 2.上传视频
+				let videoData = await this.uploadvideoData()
+				console.log(videoData)
+				// 3.上传所有数据
+				await this.uploadAllData(imgData,videoData)
+				
+			},
+			// 1.上传图片
+			uploadImgData(){
+				//把上传成功的图片路径放在数组里
+				let imgPathArr = []
+				return new Promise((resolve,reject) => {
+					// 取出图片数组每一项
+					this.uploadedImg.forEach((img) => {
+						// 截取后缀
+						let site = img.lastIndexOf('.')
+						let suffix = img.slice(site)
+						// 时间戳+随机数
+						let imgPath =Date.now() + '-' + Math.floor(Math.random(0,1) * 1000000) + suffix
+						wx.cloud.uploadFile({
+							cloudPath:'static/'+imgPath,
+							filePath:img
+						}).then(res => {
+							imgPathArr.push(res.fileID)
+							// 判断上传的图片长度和暂存的数组是否一样长（上传的完整性）
+							if(imgPathArr.length == this.uploadedImg.length){
+								resolve(imgPathArr)
+							}
+						}).catch(err => {
+							console.log(err)
+						})
+					})
+				})
+			},
+			// 2.上传视频
+			uploadvideoData(){
+				return new Promise((resolve,reject) => {
+					// 判断用户是否要上传视频
+					if(this.videoSrc == ''){
+						resolve('')
+					}else{
+						// 截取后缀
+						let site = this.videoSrc.lastIndexOf('.')
+						let suffix = this.videoSrc.slice(site)
+						// 时间戳+随机数
+						let videoPath =Date.now() + '-' + Math.floor(Math.random(0,1) * 1000000) + suffix
+						wx.cloud.uploadFile({
+							cloudPath:'videostatic/'+videoPath,
+							filePath:this.videoSrc
+						}).then(res => {
+							resolve(res.fileID)
+						}).catch(err => {
+							console.log(err)
+						})
+					}
+				})
+			},
+			// 3.上传所有数据
+			uploadAllData(imgData,videoData){
+				let userUploadData = {
+					classifyName:this.classifyName,//分类名
+					uploadTitle:this.uploadTitle,//标题
+					uploadContent:this.uploadContent,//内容
+					uploadedImg:imgData,//上传的图片
+					videoSrc:videoData,//上传的视频
+					address:this.address,//定位
+					avatar:this.avatar,//头像
+					nickName:this.nickName,//昵称
+					openid:this.openid,//openid
+					time:this.time//时间
+				}
+				console.log(userUploadData)
+				var db = wx.cloud.database()
+				db.collection('usersUploadData').add({
+					data:{
+						datainfo:userUploadData
+					}
+				}).then(res => {
+					console.log(res)
+					// 上传成功
+					uni.hideLoading()
+					this.toast('上传成功!')
+					// 跳转
+					setTimeout(() => {
+						uni.switchTab({
+							url:'../strategy/strategy'
+						})
+					},1500)
+				}).catch(err => {
+					console.log(err)
 				})
 			}
 		}
@@ -291,7 +394,7 @@
 		font-size: 26upx;
 		height: 36upx;
 		width: 36upx;
-		line-height: 36upx;
+		line-height: 33upx;
 		top: 0;
 		right: 0;
 		border-radius: 50%;

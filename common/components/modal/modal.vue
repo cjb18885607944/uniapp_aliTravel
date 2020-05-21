@@ -5,10 +5,10 @@
 				{{content}}
 			</view>
 			<view class="btn">
-				<button class="cancle" type="default">
+				<button plain class="cancle" @tap="handleCancle">
 					取消
 				</button>
-				<button class="confirm" type="default">
+				<button plain class="confirm" open-type="getUserInfo" @getuserinfo="getUserInfo">
 					{{confirlText}}
 				</button>
 			</view>
@@ -17,6 +17,8 @@
 </template>
 
 <script>
+	import {login} from '../../js/common.js'
+	
 	export default{
 		name:'Modal',
 		props:{
@@ -35,13 +37,42 @@
 		},
 		data(){
 			return{
-				showModal:true
+				showModal:false
+			}
+		},
+		methods:{
+			getUserInfo(e){
+				this.showModal = false
+				console.log(e)
+				var info = e.detail.userInfo
+				login(info).then(res => {
+					console.log(res)
+					wx.showToast({
+						title:'登录成功'
+					})
+				}).catch(err => {
+					console.log(err)
+				})
+			},
+			handleCancle(){
+				this.showModal = false
+			},
+			init(){
+				this.showModal = true
 			}
 		}
 	}
 </script>
 
 <style scoped>
+	button{
+		border: none;
+		background-color: #fff;
+		font-size: 30upx;
+		width: 80upx;
+		height: 30upx;
+		border-radius: 0;
+	}
 	.modal{
 		position: fixed;
 		top: 0;
@@ -52,29 +83,34 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		overflow: hidden;
 		z-index: 9999;
 	}
 	.modalCon{
+		overflow: hidden;
 		background-color: #fff;
 		border-radius: 20upx;
-		min-width: 400upx;
+		min-width: 500upx;
 		min-height: 300upx;
 	}
 	.content{
-		background-image: url(../../../static/tab/bg_heart.png) no-repeat left top;
-		background-size: 200upx;
-		height: 300upx;
+		height: 200upx;
 		text-align: center;
-		line-height: 300upx;
+		line-height: 200upx;
 	}
 	.btn{
 		display: flex;
+		border-top: 1px solid #CCCCCC;
 	}
 	.cancle,.confirm{
 		flex: 1;
-		border-right: 1px solid #999999;
-		border-top: 1px solid #999999;
 		height: 100upx;
+		line-height: 100upx;
+	}
+	.confirm{
+		color: #007AFF;
+	}
+	.cancle{
+		color: #f10c00;
+		border-right: 1px solid #CCCCCC;
 	}
 </style>

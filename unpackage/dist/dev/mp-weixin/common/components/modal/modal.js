@@ -114,46 +114,68 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default2 =
-{
-  name: 'Modal',
-  props: {
-    content: {
-      type: String,
-      default: function _default() {
-        return '您确定吗';
-      } },
-
-    confirlText: {
-      type: String,
-      default: function _default() {
-        return '确认';
-      } } },
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
-  data: function data() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _common = __webpack_require__(/*! ../../js/common.js */ 20); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default2 = { name: 'Modal', props: { content: { type: String, default: function _default() {return '您确定吗';} }, confirlText: { type: String, default: function _default() {return '确认';} } }, data: function data() {
     return {
-      showModal: true };
+      showModal: false };
 
-  } };exports.default = _default2;
+  },
+  methods: {
+    getUserInfo: function getUserInfo(e) {
+      this.showModal = false;
+      console.log(e);
+      var info = e.detail.userInfo;
+      (0, _common.login)(info).then(function (res) {
+        console.log(res);
+        wx.showToast({
+          title: '登录成功' });
+
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
+    handleCancle: function handleCancle() {
+      this.showModal = false;
+    },
+    init: function init() {
+      this.showModal = true;
+    } } };exports.default = _default2;
 
 /***/ }),
 

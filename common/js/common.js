@@ -1,3 +1,4 @@
+	// 防抖
 const debounce = function (func, wait) {
     let timeout;
     return function () {
@@ -11,7 +12,7 @@ const debounce = function (func, wait) {
         }, wait);
     }
 }
-
+// 预览
 const preview = function(index,Arr){
 	return new Promise((resolve,reject) => {
 		uni.previewImage({
@@ -29,5 +30,18 @@ const preview = function(index,Arr){
 		})
 	})
 }
+// 登录
+const login = function(info){
+	return new Promise((resolve,reject) => {
+		var db = wx.cloud.database()
+		db.collection('user').add({
+			data:info
+		}).then(res => {
+			resolve(res)
+		}).catch(err =>  {
+			reject(err)
+		})
+	})
+}
 
-export {debounce,preview}
+export {debounce,preview,login}
