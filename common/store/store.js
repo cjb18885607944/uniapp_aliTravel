@@ -30,12 +30,18 @@ const city = {
 	city:''
 }
 
+// 是否上传了新动态
+const isUploaded = {
+	isUploaded:false
+}
+
 const state = {
 	homeGoodsList,
 	loading,
 	homeOption,
 	nonedata,
-	city
+	city,
+	isUploaded
 }
 
 export default new Vuex.Store({
@@ -74,6 +80,12 @@ export default new Vuex.Store({
 			state.city = {
 				city:citydata
 			}
+		},
+		changeUploadedStatus(state,flag){
+			state.isUploaded={
+				isUploaded:flag
+			}
+			console.log(state.isUploaded)
 		}
 	}
 })

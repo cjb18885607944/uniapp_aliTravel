@@ -1,0 +1,116 @@
+
+.comment{
+	margin-top: 20rpx;
+	padding: 20rpx;
+	background-color: #fff;
+}
+.count{
+	font-size: 40rpx;
+	color: #333333;
+}
+.menu{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.menuItem{
+	display: inline-block;
+	padding: 10rpx;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	font-size: 28rpx;
+	margin: 20rpx 30rpx 0 0;
+	border-radius: 6rpx;
+}
+.menuItem.active{
+	background-color: #ffd300;
+	border-color: #ffd300;
+}
+.head{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	margin: 10rpx 10rpx;
+	font-size: 28rpx;
+	color: #999;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.userInfo{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.head image{
+	width: 40rpx;
+	height: 40rpx;
+	font-weight: bold;
+}
+.commentItem{
+	margin-top: 20rpx;
+	padding-bottom: 20rpx;
+	border-bottom: 1px solid #f5f5f5;
+}
+.commentContent{
+	font-size: 28rpx;
+	color: #333;
+	margin-top: 10rpx;
+}
+.commentBtn{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #f5f5f5;
+	padding: 10rpx 20rpx;
+}
+.commentBtn input{
+	width: 100%;
+	height:80rpx;
+	border-radius: 80rpx;
+	background-color: #ddd;
+	border: none;
+	padding-left: 10rpx;
+}
+/* 书写评论界面 */
+.write{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: #f5f5f5;
+}
+.writeText{
+	background-color: #fff;
+	padding-top: 30rpx;
+}
+.writeText textarea{
+	width: 100%;
+}
+.writeBtn{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: space-evenly;
+	-webkit-justify-content: space-evenly;
+	        justify-content: space-evenly;
+	margin-top: 20rpx;
+}
+.writeBtn view{
+	display: inline-block;
+	padding: 16rpx 26rpx;
+	background-color: #FFD00c;
+	border-radius: 16rpx;
+	font-size: 34rpx;
+}
+

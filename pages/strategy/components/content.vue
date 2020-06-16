@@ -1,15 +1,19 @@
 <template>
 	<view class="content">
 		<view class="goods">
-			<block v-for="(item, index) in goodsList" :key="index">
-				<view class="goodsItem">
-					<view class="goodsImg"><image :src="item.image" mode="aspectFill"></image></view>
+			<block v-for="(item, index) in showListData" :key="index">
+				<view class="goodsItem" @tap="itemTap(item.id)">
+					<view class="goodsImg">
+						<block v-for="(itemimg,index) in item.datainfo.uploadedImg" :key="index" v-if="index==0">
+							<image :src="itemimg" mode="aspectFill"></image>
+						</block>
+					</view>
 					<view class="goodsInfo">
-						<view class="title">{{item.title}}</view>
-						<view class="describe">{{item.list}}</view>
+						<view class="title">{{item.datainfo.uploadTitle}}</view>
+						<view class="describe">{{item.datainfo.uploadContent}}</view>
 						<view class="userInfo">
-							<image :src="item.avatar" mode="widthFix"></image>
-							<text class="bought">{{item.name}}</text>
+							<image :src="item.datainfo.avatar" mode="widthFix"></image>
+							<text class="bought">{{item.datainfo.nickName}}</text>
 						</view>
 					</view>
 				</view>
@@ -21,82 +25,25 @@
 <script>
 	export default{
 		name:'Content',
+		props:{
+			showListData:{
+				type:Array,
+				default(){
+					return []
+				}
+			}
+		},
 		data(){
 			return{
-				goodsList:[
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					},
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					},
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					},
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					},
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					},
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					},
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					},
-					{
-						"id":1,
-						"image":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"title":"重回云南",
-						"list":"重回云南，发现昆大丽不一样的小众美景",
-						"label":"展示观光厅门票",
-						"avatar":"cloud://travel-8g7p0.7472-travel-8g7p0-1302107170/list/d1.webp",
-						"name":"崔叔叔"
-					}
-				]
+				
+			}
+		},
+		methods:{
+			itemTap(id){
+				console.log(id)
+				uni.navigateTo({
+					url:'../details/details?id='+id
+				})
 			}
 		}
 	}

@@ -1,0 +1,24 @@
+
+.navs{
+	background-color: #FFD00c;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	font-size: 30rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	text-align: center;
+	color: #464230;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	padding: 5rpx 0;
+}
+.navs text{
+	display: block;
+	width: 100rpx;
+}
+.active{
+	border-bottom: 6rpx solid #3d3b32;
+}
+

@@ -21,8 +21,8 @@
 			</view>
 			<view class="hot">热门城市</view>
 			<view class="city">
-				<block v-for="(item,index) in city" :key="index">
-					<view class="cityItem"  @tap="tapCity(item)">{{item}}</view>
+				<block v-for="(item,index) in hotCity" :key="index">
+					<view class="cityItem"  @tap="tapResult(item)">{{item}}</view>
 				</block>
 			</view>
 		</view>
@@ -53,6 +53,7 @@
 			return{
 				address:'请定位',
 				isSearch:false,
+				hotCity:['北京市','上海市','杭州市','深圳市','广州市','昆明市','贵阳市','成都市','长沙市','武汉市'],
 				city:[],
 				keyAddress:''
 			}
@@ -100,7 +101,6 @@
 			},
 			// 实时搜索城市
 			searchAddress(e){
-				console.log(e.detail.value)
 				let key = e.detail.value
 				// 实例化API核心类
 				qqmapsdk = new QQMapWX({
@@ -136,7 +136,7 @@
 	/* 搜索框 */
 	.search{
 		background: linear-gradient(to top,#ffe556 10%,#ffd300 100%);
-		padding: 30upx 20upx;
+		padding: 20upx 20upx;
 	}
 	.searchContent{
 		display: flex;
@@ -212,7 +212,10 @@
 		display: inline-block;
 		padding: 16upx;
 		background-color: #f7f7f7;
-		margin: 30upx 30upx 0 0;
+		margin: 20upx 20upx 0 0;
+		border-radius: 12upx;
+		font-size: 28upx;
+		color: #666;
 	}
 	/* 搜索结果提示 */
 	.searchTip{

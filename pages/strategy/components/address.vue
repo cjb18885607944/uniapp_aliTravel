@@ -9,7 +9,7 @@
 					<text>{{address}}</text>
 					<image src="/static/tab/jiantouxia.png" mode=""></image>
 					<view class="wordEng">
-						lijiang
+						TRVAL
 					</view>
 				</view>
 			</view>
@@ -80,6 +80,7 @@
 		color: #FFFFFF;
 		display: block;
 		width: 100%;
+		letter-spacing: 10rpx;
 	}
 	.plane{
 		padding: 30upx 20upx;

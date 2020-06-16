@@ -94,6 +94,6 @@
 	margin-left: 10rpx;
 }
 .goods.data-v-586327a2{
-	min-height: 1000rpx;
+	/* min-height: 1000upx; */
 }
 

@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="index">
 		<!-- 进入页面的loading -->
 		<homeload v-if="homeload"></homeload>
 		<Search></Search>
@@ -9,11 +9,11 @@
 		<ScrollBar :tab="tab" id="scrollBar"></ScrollBar>
 		<myLoading v-if="isLoading"></myLoading>
 		<none-data v-if="nodata"></none-data>
+		<Goods :goodsList="goodsList" v-if="!isLoading"></Goods>
 		<!-- 上拉加载更多 -->
 		<view class="loadmore" v-show="isShowLoadMore">
 			<uni-load-more :status="loadmore" color="#ffcc99"></uni-load-more>
 		</view>
-		<Goods :goodsList="goodsList" v-if="!isLoading"></Goods>
 	</view>
 </template>
 
@@ -146,6 +146,9 @@ export default {
 </script>
 
 <style>
+	.index{
+		min-height: 2050upx;
+	}
 	.isFixed{
 		position: fixed;
 		top: 0;

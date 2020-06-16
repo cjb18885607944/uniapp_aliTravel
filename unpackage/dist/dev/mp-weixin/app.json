@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/upload/upload",
-    "pages/strategy/strategy",
     "pages/index/index",
     "pages/profile/profile",
-    "pages/search/search"
+    "pages/details/details",
+    "pages/strategy/strategy",
+    "pages/upload/upload",
+    "pages/search/search",
+    "pages/search/searchtravel"
   ],
   "subPackages": [],
   "window": {
@@ -50,5 +52,5 @@
     "none-data": "/common/components/nodata/nodata",
     "modal": "/common/components/modal/modal"
   },
-  "sitemapLocation": "sitemap71.json"
+  "sitemapLocation": "sitemap92.json"
 }

@@ -138,7 +138,7 @@
 	background: -webkit-gradient(linear,left bottom, left top,color-stop(10%, #ffe556),to(#ffd300));
 	background: -webkit-linear-gradient(bottom,#ffe556 10%,#ffd300 100%);
 	background: linear-gradient(to top,#ffe556 10%,#ffd300 100%);
-	padding: 30rpx 20rpx;
+	padding: 20rpx 20rpx;
 }
 .searchContent.data-v-71496c92{
 	display: -webkit-box;
@@ -254,7 +254,10 @@
 	display: inline-block;
 	padding: 16rpx;
 	background-color: #f7f7f7;
-	margin: 30rpx 30rpx 0 0;
+	margin: 20rpx 20rpx 0 0;
+	border-radius: 12rpx;
+	font-size: 28rpx;
+	color: #666;
 }
 /* 搜索结果提示 */
 .searchTip.data-v-71496c92{

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "动态详情",
+  "usingComponents": {
+    "navs": "/pages/details/components/navs",
+    "banner": "/pages/details/components/banner",
+    "imglist": "/pages/details/components/imglist",
+    "comment": "/pages/details/components/comment"
+  }
+}

@@ -1,0 +1,13 @@
+
+.details.data-v-7849363d {
+	background-color: #f8f8f8;
+	padding-bottom: 100rpx;
+}
+.scroll-nav.data-v-7849363d {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+

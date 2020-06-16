@@ -1,0 +1,18 @@
+
+.imglist.data-v-5117ad86{
+	margin-top: 20rpx;
+	background-color: #fff;
+	padding: 20rpx 20rpx 20rpx 20rpx;
+}
+video.data-v-5117ad86{
+	width: 100%;
+	display: block;
+	margin-top: 20rpx;
+	height: 800rpx;
+}
+image.data-v-5117ad86{
+	width: 100%;
+	display: block;
+	margin-top: 20rpx;
+}
+

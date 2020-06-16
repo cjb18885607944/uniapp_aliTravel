@@ -3,7 +3,7 @@
 		<view class="word">当地必体验</view>
 		<view class="tabContent">
 			<block v-for="(item,index) in list" :key="index">
-				<view class="tabItem" @tap="itemtap(index)" :class="{'active' : currentIndex == index}">
+				<view class="tabItem" @tap="itemtap(index,item)" :class="{'active' : currentIndex == index}">
 					{{item}}
 				</view>
 			</block>
@@ -17,12 +17,15 @@
 		data(){
 			return{
 				currentIndex:0,
-				list:['全部','景点','美食','网红打卡','全部','景点','美食','网红打卡']
+				list:['全部','景点','美食','网红','打卡']
 			}
 		},
 		methods:{
-			itemtap(index){
+			itemtap(index,name){
 				this.currentIndex = index
+				console.log(index,name)
+				// 调用父组件的方法
+				this.$parent.tapBarItem(name)
 			}
 		}
 	}

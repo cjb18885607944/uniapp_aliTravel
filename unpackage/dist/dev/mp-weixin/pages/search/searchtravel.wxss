@@ -1,0 +1,180 @@
+.goods.data-v-bca6cede {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-pack: start;
+	-webkit-justify-content: start;
+	        justify-content: start;
+	/* min-height: 400upx; */
+}
+.goodsItem.data-v-bca6cede {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 47%;
+	margin: 1% 1.5%;
+}
+.goodsImg image.data-v-bca6cede {
+	width: 100%;
+	height: 440rpx;
+	border-radius: 16rpx;
+}
+.goodsInfo.data-v-bca6cede {
+	padding: 0 16rpx;
+}
+.title.data-v-bca6cede {
+	font-size: 30rpx;
+	color: #d5c394;
+	line-height: 50rpx;
+}
+.describe.data-v-bca6cede {
+	color: #333333;
+	font-size: 36rpx;
+	font-weight: bold;
+	/* 两行溢出省略号 */
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+}
+.address.data-v-bca6cede {
+	font-size: 26rpx;
+	color: #d5c394;
+	line-height: 50rpx;
+}
+.price.data-v-bca6cede {
+	font-size: 36rpx;
+	color: #ff9113;
+	font-weight: bold;
+}
+.bought.data-v-bca6cede {
+	font-size: 26rpx;
+	color: #ccc;
+	margin-left: 10rpx;
+}
+/* 搜索框 */
+.search.data-v-bca6cede{
+	background: -webkit-gradient(linear,left bottom, left top,color-stop(10%, #ffe556),to(#ffd300));
+	background: -webkit-linear-gradient(bottom,#ffe556 10%,#ffd300 100%);
+	background: linear-gradient(to top,#ffe556 10%,#ffd300 100%);
+	padding: 20rpx 20rpx;
+}
+.searchContent.data-v-bca6cede{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.searchInput.data-v-bca6cede{
+	-webkit-box-flex: 7;
+	-webkit-flex: 7;
+	        flex: 7;
+	height: 70rpx;
+	border-radius: 35rpx 0 35rpx 35rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	background-color: #fff;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.searchInput input.data-v-bca6cede{
+	height: 70rpx;
+	line-height: 70rpx;
+	width: 100%;
+	font-size: 30rpx;
+	color: #666;
+}
+.searchInput image.data-v-bca6cede{
+	height: 50rpx;
+	width: 50rpx;
+	margin: 0 20rpx;
+}
+.searchIcon.data-v-bca6cede{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.searchIcon image.data-v-bca6cede{
+	height: 50rpx;
+	width: 50rpx;
+}
+/* 搜索历史 */
+.history.data-v-bca6cede{
+	margin-top: 30rpx;
+	padding: 20rpx;
+}
+.historyTitle.data-v-bca6cede{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.historyText.data-v-bca6cede{
+	font-size: 34rpx;
+	font-weight: bold;
+}
+.delIcon.data-v-bca6cede{
+	height:30rpx;
+	width: 30rpx;
+}
+.historyCon.data-v-bca6cede{
+	/* padding-top: 10upx; */
+}
+.historyItem.data-v-bca6cede{
+	display: inline-block;
+	background-color: #ddd;
+	padding: 10rpx;
+	font-size: 28rpx;
+	color: #666;
+	margin: 20rpx 20rpx 0 0;
+	border-radius: 8rpx;
+}
+.userInfo.data-v-bca6cede{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	padding: 10rpx 5rpx;
+}
+.userInfo image.data-v-bca6cede{
+	width: 50rpx;
+	height: 50rpx;
+	border-radius: 50rpx;
+}
+.userInfo text.data-v-bca6cede{
+	padding-left: 20rpx;
+}
+.goods.data-v-bca6cede{
+	padding-top: 20rpx;
+	padding-bottom: 20rpx;
+}
+

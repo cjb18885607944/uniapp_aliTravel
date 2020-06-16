@@ -2,7 +2,7 @@
 	<!-- 搜索 -->
 	<view class="search_contain">
 		<view class="search_left"><image src="/static/tab/saoma.svg" mode="widthFix" /></view>
-		<view class="search_center">
+		<view class="search_center" @tap="searchPage">
 			<image src="/static/tab/sousuo.svg" mode="widthFix" />
 			<input type="text" placeholder="请输入搜索内容" disabled />
 		</view>
@@ -12,7 +12,14 @@
 
 <script>
 export default {
-	name: 'search'
+	name: 'search',
+	methods:{
+		searchPage(){
+			uni.navigateTo({
+				url:'../search/searchtravel'
+			})
+		}
+	}
 };
 </script>
 

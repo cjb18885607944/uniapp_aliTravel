@@ -39,6 +39,6 @@ export default {
 /* 引入公共样式 */
 @import "/common/css/common.css";
 .goods{
-	min-height: 1000upx;
+	/* min-height: 1000upx; */
 }
 </style>

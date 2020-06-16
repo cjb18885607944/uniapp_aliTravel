@@ -41,6 +41,7 @@
 	color: #FFFFFF;
 	display: block;
 	width: 100%;
+	letter-spacing: 10rpx;
 }
 .plane{
 	padding: 30rpx 20rpx;

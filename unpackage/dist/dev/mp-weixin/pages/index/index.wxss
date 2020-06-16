@@ -1,4 +1,7 @@
 
+.index{
+	min-height: 2050rpx;
+}
 .isFixed{
 	position: fixed;
 	top: 0;
